@@ -1,5 +1,5 @@
 {
-  "name": "utweetwall",
+  "name": "tweetWall",
   "version": "1.0.0",
   "description": "twitter word cloud generator",
   "main": "server.js",

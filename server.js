@@ -34,7 +34,7 @@ var server  = http.createServer(app).listen( PORTNUMBER, function(){
 
 
 var SEARCH_PARAMS = {
-  q:'#bostondesignweek',
+  q:'@_Continuum',
   tweet_mode:'extended',
   count:'100',
   include_entities:'true'
@@ -90,7 +90,7 @@ var client = new Twitter({
  * Stream statuses filtered by keyword
  * number of tweets per second depends on topic popularity
  **/
-client.stream('statuses/filter', {track: '#bostondesignweek,@_Continuum,@bosdesignweek'},  function(stream) {
+client.stream('statuses/filter', {track: '@_Continuum,@EPAMSYSTEMS'},  function(stream) {
   stream.on('data', function(tweet) {
     if ( tweet.text != undefined ){
       console.log(tweet.user.screen_name + " - " + tweet.user.name);
