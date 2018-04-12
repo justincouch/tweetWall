@@ -3,7 +3,7 @@ var tweetQueue = [];
 var tweetWords = "";
 
 function connectToSocket(){
-    console.log('connecting to socket');
+    //console.log('connecting to socket');
     var socket = io.connect('http://localhost:9001'); //10.21.112.122
     socket.on('tweet', function(data){
         tweetQueue.push(data);
@@ -40,7 +40,7 @@ function checkTweetQueue(){
         //parseText(tweetWords);
     }
     else {
-        console.log("tweet queue is empty");
+        //console.log("tweet queue is empty");
         showARandomTweet();
         //parseText(tweetWords);
     }
@@ -48,9 +48,9 @@ function checkTweetQueue(){
 }
 
 function showARandomTweet(){
-    console.log("randomize!");
+    //console.log("randomize!");
     var index = Math.floor(tweetHistory.length * Math.random());
-    console.log( "using tweet: " + index );
+    //console.log( "using tweet: " + index );
     $("body").append( createTweetDiv(tweetHistory[index]) );
     setTimeout(function(){
         var div = $( "#t_"+tweetHistory[index].id_str );
@@ -150,7 +150,7 @@ function flatten(t, e) {
     return n.join(" ")
 }
 function parseText(t) {
-    console.log('parsing text');
+    //console.log('parsing text');
     tags = {};
     var e = {};
     t.split(d3.select("#per-line").property("checked") ? /\n/g : wordSeparators).forEach(function(t) {

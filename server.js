@@ -48,8 +48,8 @@ io.sockets.on('connection', function (socket) {
   //socket.emit('tweet', {text:"test text", source:"@joe"});
   client.get('search/tweets', SEARCH_PARAMS)
     .then(function(value){
-      console.log(value);
-      console.log(value.statuses.length);
+      // console.log(value);
+      // console.log(value.statuses.length);
       for( var i=0; i<value.statuses.length; i++ ){
         io.emit( 'tweet', value.statuses[i] );
       }
@@ -93,9 +93,9 @@ var client = new Twitter({
 client.stream('statuses/filter', {track: '@mithackmed,#GrandHack'},  function(stream) {
   stream.on('data', function(tweet) {
     if ( tweet.text != undefined ){
-      console.log(tweet.user.screen_name + " - " + tweet.user.name);
-      console.log("  " + tweet.text);
-      console.log("  " + tweet.source);
+      // console.log(tweet.user.screen_name + " - " + tweet.user.name);
+      // console.log("  " + tweet.text);
+      // console.log("  " + tweet.source);
       io.emit( 'tweet', tweet );
     }
   });
